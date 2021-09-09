@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="How to align a team towards better code quality" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://bhave.sh/align-team-code-quality.html" />
+		<meta property="og:image" content="https://bhave.sh/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>Bhavesh Kakwani</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://bhave.sh/theme/css/poole.css" />
+		<link rel="stylesheet" href="https://bhave.sh/theme/css/hyde.css" />
+		<link rel="stylesheet" href="https://bhave.sh/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="https://bhave.sh/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Bhavesh Kakwani Full Atom Feed" />
+<link href="https://bhave.sh/feeds/articles.atom.xml" type="application/atom+xml" rel="alternate" title="Bhavesh Kakwani Categories Atom Feed" />
+
+		<!-- Analytics -->
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/">
+					<img class="profile-picture" src="https://bhave.sh/images/avatar.jpg">
+					Bhavesh Kakwani
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/bhavesh_kakwani" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://www.linkedin.com/in/bhaveshkakwani/" target="_blank">
+						<i class="fa fa-linkedin"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/bhavesh-k/" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="https://bhave.sh/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">How to align a team towards better code quality</h1>
+	<span class="post-date">Wed 08 September 2021</span>
+	<p><img alt="A lily of the valley plant in High Park, Toronto" src="https://bhave.sh/images/lily_of_the_valley.jpg"></p>
+<p>Two major issues that erode code quality in a company are</p>
+<ul>
+<li>code duplication</li>
+<li>non-standard coding style.</li>
+</ul>
+<p>To tackle these, I held meetings with my team to identify common functionalities that everyone expects (and often repeatedly re-implements) in their software modules. From these meetings, I gathered all these common functionalities as well as additional feature requests and made them the requirements for a new library I would implement.</p>
+<p>The library I architected handled foundational aspects of flight software modules such as message passing between modules, tracking state in state machines, a common command interface to allow manipulation of the state machine, sensible diagnostic log messages, and an 'error' state to allow for root cause analysis of a software module's failure. The library does a great job of enacting the DRY (don't repeat yourself) principle. Each new software module to be written would be an object that inherits from this library's main class, and thus benefits from all the features without having to implement them again.</p>
+<p>By creating this and explaining to the team the philosophy behind the library and how to best use it, I was able to create a coding culture/style that is consistent among all developers on our team. The mundane parts of the code became more robust and predictable, and this helped to prevent a lot of software bugs and errors. The team got engaged as stakeholders and helped me by further refining the library and adding needed features, without causing too much code-bloat/scope-creep. Code reviews became much easier too, because now we all write code in a similar way so we are familiar with the structure and can focus on the unique details of each implementation. Finally, the code is now completely modular as there are well-defined interfaces between modules, the controller and the receivers (GUIs). All of these contributed to a codebase that is of much higher quality than before.</p>
+</div>
+		</div>
+	</body>
+</html>
